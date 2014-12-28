@@ -6,25 +6,29 @@
   </ul>
   <div class="row hidden" id="houston-create-document">
     <h3>Add more {{name}}</h3>
-
-    <!-- <form id="houston-create-row" class="form-horizontal" role="form">
-      {{# each nonid_headers }}
-      {{> _houston_new_document_field}}
-      {{/each}}
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <button type="button" id="houston-cancel" class="btn btn-primary"><i
-              class="fa fa-times"></i>Cancel
-          </button>
-          <button type="button" id="houston-add"
-                  class="btn btn-success pull-right"><i class="fa fa-plus"></i>Add
-          </button>
-        </div>
-      </div>
-    </form> -->
+    
     {{#if schema}}
-      {{> quickForm template='bootstrap3' schema=schema id="houstonInsert" type="method" meteormethod='foo'}}
+      {{> quickForm template='bootstrap3' schema=schema id="houstonInsert" type="method" meteormethod=methodName}}
+      <button type="button" id="houston-cancel" class="btn btn-primary"><i
+        class="fa fa-times"></i>Cancel
+      </button>
+    {{else}}
+      <form id="houston-create-row" class="form-horizontal" role="form">
+        {{# each nonid_headers }}
+        {{> _houston_new_document_field}}
+        {{/each}}
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <button type="button" id="houston-cancel" class="btn btn-primary"><i
+                class="fa fa-times"></i>Cancel
+            </button>
+            <button type="button" id="houston-add"
+                    class="btn btn-success pull-right"><i class="fa fa-plus"></i>Add
+            </button>
+          </div>
+        </div>
+      </form>
     {{/if}}
     <hr>
   </div>

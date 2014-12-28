@@ -38,5 +38,5 @@ Houston._setup_collection_methods = (collection) ->
     else
       id = collection.findOne(new Meteor.Collection.ObjectID(id))
       collection.remove(id)
-
+  console.log(methods)
   Meteor.methods(methods)
