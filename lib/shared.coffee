@@ -40,3 +40,13 @@ Houston._get_fields = (documents, options={}) ->
 
 Houston._get_field_names = (documents) ->
   _.pluck(Houston._get_fields(documents), 'name')
+
+Houston.add_schema = (collection, simpleSchema) -> 
+  Houston._setup_schema(collection, simpleSchema)
+
+Houston._setup_schema = (collection, schema) ->
+  #this is just for the demo...
+  Houston._schemas ?= {}
+
+  #validate schema is a SimpleSchema
+  Houston._schemas[collection._name] = schema

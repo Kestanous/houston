@@ -7,7 +7,7 @@
   <div class="row hidden" id="houston-create-document">
     <h3>Add more {{name}}</h3>
 
-    <form id="houston-create-row" class="form-horizontal" role="form">
+    <!-- <form id="houston-create-row" class="form-horizontal" role="form">
       {{# each nonid_headers }}
       {{> _houston_new_document_field}}
       {{/each}}
@@ -22,7 +22,10 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
+    {{#if schema}}
+      {{> quickForm template='bootstrap3' schema=schema id="houstonInsert" type="method" meteormethod='foo'}}
+    {{/if}}
     <hr>
   </div>
   <div class="row">

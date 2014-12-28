@@ -27,6 +27,9 @@ Package.on_use(function(api) {
   api.use('iron:router@1.0.1', 'client');
   api.use('tmeasday:paginated-subscription@0.2.4', 'client');
   api.use('dburles:mongo-collection-instances@0.2.2', ['client', 'server']);
+  api.use('aldeed:simple-schema@1.2.0', 'client');
+  api.use('aldeed:autoform@4.2.2', 'client');
+  api.use('aldeed:collection2@2.3.0', 'client', { weak: true });
 
   //////////////////////////////////////////////////////////////////
   // internal files
@@ -71,4 +74,6 @@ Package.on_use(function(api) {
   'client');
 
   api.add_files(['server/publications.coffee', 'server/exports.coffee', 'server/methods.coffee'], 'server');
+
+  api.export('houston');
 });
